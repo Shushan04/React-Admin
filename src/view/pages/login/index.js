@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
     Box,
     Container, 
@@ -7,8 +8,22 @@ import {
  } from '@mui/material';
 
 const Login = () => {
-    const handleLogin = (values) => {
-        console.log(handleLogin)
+    const [loginValue, setLoginValue] = useState({
+        email: '',
+        password: ''
+    });
+
+    const handleInputChange = (event) => {
+        const {name, value} = event.target;
+        setLoginValue({
+            ...loginValue,
+            [name]: value
+        })
+    }
+
+
+    const handleLogin = () => {
+        console.log(loginValue)
     }
     return (
         <Container maxWidth="xs">
@@ -35,6 +50,7 @@ const Login = () => {
                             type="email"
                             label="Email"
                             placeholder='Email'
+                            onChange={handleInputChange}
                         />                   
 
                     </div>
@@ -46,11 +62,12 @@ const Login = () => {
                         type="password"
                         label="Password"
                         placeholder='Password'
+                        onChange={handleInputChange}
                         />                     
                     </div>
 
                     <div>
-                       <Button variant="contained">
+                       <Button variant="contained" onClick={handleLogin}>
                             Login
                        </Button>           
                     </div>

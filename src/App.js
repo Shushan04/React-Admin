@@ -1,10 +1,18 @@
 import React from 'react';
 import Login from './view/pages/login';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 
 function App() {
+
   return (
     <div className="App">
-      <Login/>
+
+      <BrowserRouter>
+          <Routes>
+              <Route path='/login' element={<Login/>}/>
+          </Routes>
+      </BrowserRouter>
  
     </div>
   );
