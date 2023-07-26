@@ -1,9 +1,12 @@
 import React from 'react';
 import Login from './view/pages/login';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Register from './view/pages/register';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 
 function App() {
+
+
 
   return (
     <div className="App">

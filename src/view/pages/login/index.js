@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../config/firebase';
 import { 
     Box,
     Container, 
@@ -6,6 +8,7 @@ import {
     TextField,
     Button
  } from '@mui/material';
+
 
 const Login = () => {
     const [loginValue, setLoginValue] = useState({
@@ -22,9 +25,17 @@ const Login = () => {
     }
 
 
-    const handleLogin = () => {
-        console.log(loginValue)
-    }
+    const handleLogin = async () => {
+        const {email, password} = loginValue;   
+        try{
+            createUserWithEmailAndPassword(auth, email, password);
+        } catch(error){
+            console.log(error);
+        } finally{
+            
+        }    
+        
+    };
     return (
         <Container maxWidth="xs">
             <Box sx={{}}>

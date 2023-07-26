@@ -33,8 +33,8 @@ const Register = () => {
     return (
         <Container maxWidth="xs">
             <Box sx={{}}>
-                <Typography variant="h5">
-                    Register
+                <Typography variant="h5" >
+                    Sign Up
                 </Typography>
 
                 <Box
