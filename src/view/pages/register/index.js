@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { 
     Box,
     Container, 
@@ -33,7 +34,7 @@ const Register = () => {
     return (
         <Container maxWidth="xs">
             <Box sx={{}}>
-                <Typography variant="h5" >
+                <Typography variant="h5" margin="20px">
                     Sign Up
                 </Typography>
 
@@ -42,10 +43,18 @@ const Register = () => {
                     onSubmit={handleRegister}
                     sx={{
                         display: 'grid',
-                        gap: '20px'
+                        gap: '20px',
+                        
                     }}
                 >
-                    <div>
+                 <Box
+                    sx={{
+                        display: 'grid',
+                        gap: '20px',     
+                        gridTemplateColumns: 'repeat(2, 1fr)'
+                    }}
+                 >
+                 <div>
                         <TextField
                             name="firstName"
                             fullWidth
@@ -65,6 +74,10 @@ const Register = () => {
                             onChange={handleInputChange}
                         />
                     </div>
+                    
+                    
+                </Box>   
+ 
                      <div>
                         <TextField
                             name="age"

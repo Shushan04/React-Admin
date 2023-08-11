@@ -37,10 +37,14 @@ const Login = () => {
         
     };
     return (
-        <Container maxWidth="xs">
-            <Box sx={{}}>
+        <Container maxWidth="xs" >
+            <Box sx={{
+                display: 'grid', 
+                gap: '20px',
                 
-                <Typography  variant="h5">
+            }}>
+                
+                <Typography  variant="h5" margin="20px" >
                     Sign in
                 </Typography> 
             
@@ -52,9 +56,10 @@ const Login = () => {
                 sx={{
 
                     display:'grid',
-                    gap: '20px'
+                    gap: '20px',
+                    
                 }}>
-                     <div>
+                    <div>
                         <TextField
                             name="email"
                            fullWidth
