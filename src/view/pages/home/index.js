@@ -15,14 +15,20 @@ const Navbar = () => {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Admin App
                 </Typography>
-                <Box>
+                <Box 
+                  sx={{
+                    display: 'grid',
+                    gap: '20px',    
+                    gridTemplateColumns: 'repeat(2, 1fr)'
+                  }}
+                >
                     <Link to="/login" style={{ textDecoration: 'none'}}>
-                        <Button color='inherit'>
+                        <Button color='inherit' variant="contained">
                             Sign In
                         </Button>
                     </Link>
                     <Link to="/register" style={{ textDecoration: 'none' }}>
-                        <Button color="inherit">
+                        <Button color="inherit" variant="contained">
                             Sign Up
                         </Button>
                     </Link>
